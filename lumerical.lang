@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Author: 2011 Ransford Okpoti -->
+<language id="lumerical" _name="Lumerical" version="2.0" _section="Scripts">
+      <metadata>
+            <property name="mimetypes">text/x-lumerical</property>
+            <property name="globs">*.lsf</property>
+      </metadata>
+      <styles>
+            <style id="keyword"  _name="Keyword"     map-to="def:keyword"/>
+            <style id="feature"  _name="Feature"     map-to="def:type"/>
+            <style id="comments"     _name="Comments"    map-to="def:comment"/>
+            <style id="strings"	_name="Strings" map-to="def:string"/>
+	    <style id="functions" _name="Functions" map-to="def:function"/>
+      </styles>
+      <definitions>
+            <context id="lumerical" class="no-spell-check">
+                  <include>
+                        <!-- Keywords -->
+                        <context id="keyword" style-ref="keyword">
+                              <keyword>for</keyword>
+                              <keyword>if</keyword>
+                              <keyword>else</keyword>
+                              <keyword>switchtolayout</keyword>
+                              <keyword>run</keyword>
+			      <keyword>delete</keyword>
+                        </context>
+
+			<context id="functions" style-ref="functions">
+				<keyword>select</keyword>
+				<keyword>set</keyword>
+				<keyword>length</keyword>
+				<keyword>num2str</keyword>
+				<keyword>write</keyword>
+				<keyword>getresult</keyword>
+			</context>
+ 
+                        <context id="comments" style-ref="comments" end-at-line-end="true">
+                              <start>#</start>
+                              <end>\n</end>
+                        </context>
+
+			<context id="strings" style-ref="strings">
+				<start>"</start>
+				<end>"</end>
+			</context> 			
+
+			<context ref="def:decimal"/>
+			<context ref="def:float"/> 
+                  </include>
+            </context>
+      </definitions>
+</language>
